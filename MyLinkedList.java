@@ -7,10 +7,17 @@ public class MyLinkedList{
   }
 
   public boolean add(int value){
-
+    if(end == null){
+      end = value;
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
   public String toString(){
-    
+    String result = "";
+    return result;
   }
 }
