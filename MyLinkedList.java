@@ -14,12 +14,12 @@ public class MyLinkedList{
 
   public String toString(){
     String result = "[";
-    for(Node i = start; i < end; i = i.next){
-      result += i + ",";
-      if(i == end.prev){
-        result += "]";
+    for(int i = 0; i < size; i++){
+      result += start.getNext();
+      if(i != size - 1){
+        result += ",";
       }
     }
     return result;
-  }
+}
 }
