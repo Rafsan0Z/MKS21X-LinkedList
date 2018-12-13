@@ -8,7 +8,6 @@ public class MyLinkedList{
 
   public boolean add(int value){
     size++;
-    Node piece = new Node(value,null,end);
     return true;
   }
 

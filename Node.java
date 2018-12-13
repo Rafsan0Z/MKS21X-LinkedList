@@ -8,11 +8,11 @@ public class Node{
     data = value;
   }
 
-  public Node getNext(){
+  public Node getNext(){ // This get is for the Node
     return next;
   }
 
-  public int get(){
+  public int get(){ // This get is for integer data
     return data;
   }
 
