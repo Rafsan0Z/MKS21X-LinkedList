@@ -34,7 +34,7 @@ public class Node{
   }
 
   public String toString(){
-    String result = "";
+    String result = "" + data;
     return result;
   }
 }
