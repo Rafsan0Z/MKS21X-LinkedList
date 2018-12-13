@@ -28,7 +28,10 @@ public class MyLinkedList{
 }
 
   public int get(int index){
-    return  0;
+    Node temp = start;
+    for(int i = 0; i <= index;i++){
+      if(i == index) {return temp.getData();}
+    }
   }
 
   public int set(int index, Integer value){
