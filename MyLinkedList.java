@@ -8,7 +8,7 @@ public class MyLinkedList{
 
   public boolean add(int value){
     if(end == null){
-      end = value;
+      end = new Node(end, value);
       return true;
     }
     else{
@@ -17,7 +17,13 @@ public class MyLinkedList{
   }
 
   public String toString(){
-    String result = "";
+    String result = "[";
+    for(Node i = start; i < end; i = i.next){
+      result += i + ",";
+      if(i == end.prev){
+        result += "]";
+      }
+    }
     return result;
   }
 }
