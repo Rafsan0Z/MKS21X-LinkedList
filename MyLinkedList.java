@@ -7,13 +7,9 @@ public class MyLinkedList{
   }
 
   public boolean add(int value){
-    if(end == null){
-      end = new Node(end, value);
-      return true;
-    }
-    else{
-      return false;
-    }
+    size++;
+    Node piece = new Node(value,null,end);
+    return true;
   }
 
   public String toString(){
