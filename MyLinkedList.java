@@ -19,6 +19,6 @@ public class MyLinkedList{
         result += ",";
       }
     }
-    return result;
+    return result + "]";
 }
 }
