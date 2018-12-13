@@ -14,7 +14,7 @@ public class MyLinkedList{
   public String toString(){
     String result = "[";
     for(int i = 0; i < size; i++){
-      result += start.getNext();
+      result += start.getNext().get();
       if(i != size - 1){
         result += ",";
       }
