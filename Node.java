@@ -15,4 +15,8 @@ public class Node{
   public int get(){
     return data;
   }
+
+  public void setPrev(Node P){
+    prev = P;
+  }
 }
