@@ -2,16 +2,16 @@ public class MyLinkedList{
   private int size;
   private Node start,end;
 
-  public int size() {
+  public int size() { // returns size of LinkedList
     return size;
   }
 
-  public boolean add(int value){
+  public boolean add(int value){ // Not complete
     size++;
     return true;
   }
 
-  public String toString(){
+  public String toString(){ // turns the LinkedList into a String to be printed!
     String result = "[";
     for(int i = 0; i < size; i++){
       result += start.getNext().get();
@@ -19,6 +19,6 @@ public class MyLinkedList{
         result += ",";
       }
     }
-    return result;
+    return result + "]";
 }
 }
