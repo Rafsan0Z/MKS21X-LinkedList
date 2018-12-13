@@ -8,11 +8,15 @@ public class Node{
     data = value;
   }
 
-  public Node getNext(){ // This get is for the Node
+  private Node next(){ // This get is for the Node
     return next;
   }
 
-  public int get(){ // This get is for integer data
+  private Node prev(){
+    return prev;
+  }
+
+  public int getData(){ // This get is for integer data
     return data;
   }
 
@@ -22,5 +26,15 @@ public class Node{
 
   public void setNext(Node N){ // Set the next Node
     next = N;
+  }
+
+  public int setData(int i){
+    data = i;
+    return data;
+  }
+
+  public String toString(){
+    String result = "";
+    return result;
   }
 }
