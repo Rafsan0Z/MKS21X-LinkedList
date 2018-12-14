@@ -3,9 +3,9 @@ public class Node{
   private Node next,prev;
 
   public Node(Node n, Node p, int num){
-    data = num;
-    next = n;
-    prev = p;
+    this.data = num;
+    this.next = n;
+    this.prev = p;
   }
 
   private Node next(){ // This get is for the Node
