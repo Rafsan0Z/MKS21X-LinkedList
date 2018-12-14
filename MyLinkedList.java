@@ -57,7 +57,15 @@ public class MyLinkedList{
   }
 
   public int indexOf(Integer value){
-    return 0;
+    Node temp = start;
+    int i = 0;
+    while(i != index){
+      temp = temp.getNext();
+      if(temp.getData() == value){
+        return i;
+      }
+    }
+    return -1;
   }
 
   public void add(int index, Integer value){
