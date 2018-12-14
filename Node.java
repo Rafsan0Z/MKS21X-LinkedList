@@ -2,6 +2,12 @@ public class Node{
   private int data;
   private Node next,prev;
 
+  public Node(Node n, Node p, int num){
+    data = num;
+    next = n;
+    prev = p;
+  }
+
   private Node next(){ // This get is for the Node
     return next;
   }
