@@ -29,9 +29,12 @@ public class MyLinkedList{
 
   public int get(int index){
     Node temp = start;
-    for(int i = 0; i <= index;i++){
-
+    int i = 0;
+    while(i != index){
+      temp.getNext();
+      i++;
     }
+    return temp.getData();
   }
 
   public int set(int index, Integer value){
@@ -42,6 +45,14 @@ public class MyLinkedList{
   }
 
   public boolean contains(Integer value){
+    Node temp = start;
+    int i = 0;
+    while(i != index){
+      temp = temp.getNext();
+      if(temp.getData() == value){
+        return true;
+      }
+    }
     return false;
   }
 
