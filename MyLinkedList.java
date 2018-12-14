@@ -69,7 +69,10 @@ public class MyLinkedList{
   }
 
   public void add(int index, Integer value){
-
+    Node temp = start;
+    for(int i = 0; i <= index; i++){
+      temp = temp.getNext();
+    }
   }
 
   public Integer remove(int index){
