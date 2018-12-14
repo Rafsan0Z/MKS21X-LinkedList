@@ -4,7 +4,8 @@ public class MyLinkedList{
 
   public MyLinkedList(){
     size = 0;
-    start = end;
+    start = null;
+    end = null;
   }
 
   public int size() { // returns size of LinkedList
@@ -18,11 +19,10 @@ public class MyLinkedList{
 
   public String toString(){ // turns the LinkedList into a String to be printed!
     String result = "[";
-    for(int i = 0; i < size; i++){
-      result += start.getNext().get();
-      if(i != size - 1){
-        result += ",";
-      }
+    Node temp = start;
+    while(temp != null){
+      result += temp.toString() + ",";
+      temp = temp.getNext();
     }
     return result + "]";
 }
@@ -30,12 +30,15 @@ public class MyLinkedList{
   public int get(int index){
     Node temp = start;
     for(int i = 0; i <= index;i++){
-      if(i == index) {return temp.getData();}
+
     }
   }
 
   public int set(int index, Integer value){
-    return 0;
+    if(size == 0){
+      start.Node(start,end,value);
+    }
+    size++;
   }
 
   public boolean contains(Integer value){
