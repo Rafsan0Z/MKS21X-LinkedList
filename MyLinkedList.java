@@ -15,7 +15,7 @@ public class MyLinkedList{
   public boolean add(int value){ // Not complete
     size++;
     Node addend = new Node(null,end,value);
-    If(end != null){
+    if(end != null){
       end.setNext(addend);
       end = addend;
     }
@@ -31,7 +31,7 @@ public class MyLinkedList{
     Node temp = start;
     while(temp != null){
       result += temp.toString() + ",";
-      temp = temp.getNext();
+      temp = temp.next();
     }
     return result + "]";
 }
@@ -39,8 +39,11 @@ public class MyLinkedList{
   public int get(int index){
     Node temp = start;
     int i = 0;
+    if(index <= 0 || index > size){
+      throw new IndexOutOfBoundsException("Incorrect Index!");
+    }
     while(i != index){
-      temp.getNext();
+      temp.next();
       i++;
     }
     return temp.getData();
@@ -49,7 +52,7 @@ public class MyLinkedList{
   public int set(int index, Integer value){
     int result;
     if(index <= 0 || index > size){
-      
+      throw new IndexOutOfBoundsException("Incorrect Index!");
     }
     else{
       Node temp = start;
@@ -68,8 +71,8 @@ public class MyLinkedList{
   public boolean contains(Integer value){
     Node temp = start;
     int i = 0;
-    while(i != index){
-      temp = temp.getNext();
+    while(temp.next() != null){
+      temp = temp.next();
       if(temp.getData() == value){
         return true;
       }
@@ -80,8 +83,8 @@ public class MyLinkedList{
   public int indexOf(Integer value){
     Node temp = start;
     int i = 0;
-    while(i != index){
-      temp = temp.getNext();
+    while(temp.next() != null){
+      temp = temp.next();
       if(temp.getData() == value){
         return i;
       }
@@ -90,13 +93,19 @@ public class MyLinkedList{
   }
 
   public void add(int index, Integer value){
+    if(index <= 0 || index > size){
+      throw new IndexOutOfBoundsException("Incorrect Index!");
+    }
     Node temp = start;
     for(int i = 0; i <= index; i++){
-      temp = temp.getNext();
+      temp = temp.next();
     }
   }
 
   public Integer remove(int index){
+    if(index <= 0 || index > size){
+      throw new IndexOutOfBoundsException("Incorrect Index!");
+    }
     Node temp = start; // create temporary Node
     int lastIndex = size - 1;
     Integer result = 0; // set result to 0
