@@ -23,8 +23,9 @@ public class Node{
   }
 
   public int setData(int i){
+    int result = data;
     data = i;
-    return data;
+    return result;
   }
 
   public String toString(){
