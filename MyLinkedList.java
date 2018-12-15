@@ -47,10 +47,22 @@ public class MyLinkedList{
   }
 
   public int set(int index, Integer value){
-    if(size == 0){
-      start.Node(start,end,value);
+    int result;
+    if(index <= 0 || index > size){
+      
+    }
+    else{
+      Node temp = start;
+      int i = 0;
+      while(i != index){
+        temp = temp.next();
+        i++;
+      }
+      result = temp.getData();
+      temp.setData(value);
     }
     size++;
+    return result;
   }
 
   public boolean contains(Integer value){
