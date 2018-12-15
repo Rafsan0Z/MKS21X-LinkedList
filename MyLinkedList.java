@@ -14,7 +14,7 @@ public class MyLinkedList{
 
   public boolean add(int value){ // Not complete
     size++;
-    Node addend = new Node(value,null,end);
+    Node addend = new Node(null,end,value);
     If(end != null){
       end.setNext(addend);
       end = addend;
