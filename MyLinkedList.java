@@ -13,13 +13,22 @@ public class MyLinkedList{
 
   public boolean add(int value){ // Not complete
     size++;
+    Node addend = new Node(value,null,end);
+    If(end != null){
+      end.setNext(addend);
+      end = addend;
+    }
+    else{
+      start = addend;
+      end = start;
+    }
     return true;
   }
 
   public String toString(){ // turns the LinkedList into a String to be printed!
     String result = "[";
     for(int i = 0; i < size; i++){
-      result += start.getNext().get();
+      result += start.next().getData();
       if(i != size - 1){
         result += ",";
       }
@@ -32,6 +41,7 @@ public class MyLinkedList{
     for(int i = 0; i <= index;i++){
       if(i == index) {return temp.getData();}
     }
+    return -1;
   }
 
   public int set(int index, Integer value){

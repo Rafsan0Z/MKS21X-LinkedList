@@ -2,11 +2,11 @@ public class Node{
   private int data;
   private Node next,prev;
 
-  private Node next(){ // This get is for the Node
+  public Node next(){ // This get is for the Node
     return next;
   }
 
-  private Node prev(){
+  public Node prev(){
     return prev;
   }
 
