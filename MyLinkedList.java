@@ -86,7 +86,7 @@ public class MyLinkedList{
     while(temp.next() != null){
       temp = temp.next();
       if(temp.getData() == value){
-        return i;
+        return i + 1;
       }
       i++;
     }
@@ -99,7 +99,7 @@ public class MyLinkedList{
     }
     size++;
     Node temp = start;
-    for(int i = 0; i <= index; i++){
+    for(int i = 0; i < index; i++){
       temp = temp.next();
     }
     Node addend = new Node(null,null,value);
@@ -111,12 +111,16 @@ public class MyLinkedList{
   }
 
   public Integer remove(int index){
-    if(index <= 0 || index > size){
+    if(index < 0 || index > size){
       throw new IndexOutOfBoundsException("Incorrect Index!");
     }
     Node temp = start; // create temporary Node
-    int lastIndex = size - 1;
-    Integer result = 0; // set result to 0
+    Integer result = 0; // set result to 0    
+    if(index == 0){
+      result = start.getData();
+      start = start.next();
+      return result;
+    }
     int i = 0;
     while(i != index){
       temp = temp.next(); // while loop to get Node at index
