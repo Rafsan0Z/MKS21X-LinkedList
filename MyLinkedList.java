@@ -97,10 +97,17 @@ public class MyLinkedList{
     if(index <= 0 || index > size){
       throw new IndexOutOfBoundsException("Incorrect Index!");
     }
+    size++;
     Node temp = start;
     for(int i = 0; i <= index; i++){
       temp = temp.next();
     }
+    Node addend = new Node(null,null,value);
+    Node previous = temp.prev();
+    previous.setNext(addend);
+    temp.setPrev(addend);
+    addend.setNext(temp);
+    addend.setPrev(previous);
   }
 
   public Integer remove(int index){
