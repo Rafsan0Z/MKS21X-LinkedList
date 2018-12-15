@@ -85,18 +85,18 @@ public class MyLinkedList{
   }
 
   public Integer remove(int index){
-    Node temp = start;
+    Node temp = start; // create temporary Node
     int lastIndex = size - 1;
-    Integer result = 0;
+    Integer result = 0; // set result to 0
     int i = 0;
     while(i != index){
-      temp = temp.next();
+      temp = temp.next(); // while loop to get Node at index
       i++;
     }
     if(end != temp){
       Node previous = temp.prev();
       Node following = temp.next();
-      previous.setNext(following);
+      previous.setNext(following);  // if temporary Node and end Node are differet, make create the previous and following Node and join them
       following.setPrev(previos);
       result = temp.getData();
     }
@@ -111,11 +111,11 @@ public class MyLinkedList{
   }
 
   public boolean remove(Integer value){
-    boolean result = false;
+    boolean result = false; // setting result as false
     if(contains(value)) {
-      remove(indexOf(value));
-      result = true;
+      remove(indexOf(value)); // Make sure that remove works!
+      result = true;  // Changes the result
     }
-    return result;
+    return result; // returns the result
   }
 }
