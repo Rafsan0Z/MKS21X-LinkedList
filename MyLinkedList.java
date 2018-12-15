@@ -28,18 +28,10 @@ public class MyLinkedList{
 
   public String toString(){ // turns the LinkedList into a String to be printed!
     String result = "[";
-<<<<<<< HEAD
-    for(int i = 0; i < size; i++){
-      result += start.next().getData();
-      if(i != size - 1){
-        result += ",";
-      }
-=======
     Node temp = start;
     while(temp != null){
       result += temp.toString() + ",";
       temp = temp.getNext();
->>>>>>> 9ae927ed61b0b1dda685b3af2c71f79bae2c930f
     }
     return result + "]";
 }
@@ -51,13 +43,6 @@ public class MyLinkedList{
       temp.getNext();
       i++;
     }
-<<<<<<< HEAD
-    return -1;
-  }
-
-  public int set(int index, Integer value){
-  return 0;
-=======
     return temp.getData();
   }
 
@@ -66,7 +51,6 @@ public class MyLinkedList{
       start.Node(start,end,value);
     }
     size++;
->>>>>>> 9ae927ed61b0b1dda685b3af2c71f79bae2c930f
   }
 
   public boolean contains(Integer value){
@@ -101,10 +85,37 @@ public class MyLinkedList{
   }
 
   public Integer remove(int index){
-    return 0;
+    Node temp = start;
+    int lastIndex = size - 1;
+    Integer result = 0;
+    int i = 0;
+    while(i != index){
+      temp = temp.next();
+      i++;
+    }
+    if(end != temp){
+      Node previous = temp.prev();
+      Node following = temp.next();
+      previous.setNext(following);
+      following.setPrev(previos);
+      result = temp.getData();
+    }
+    else{
+      Node previous = temp.prev();
+      previos.setNext(null);
+      end = previous;
+      result = temp.getData();
+    }
+    size--;
+    return result;
   }
 
-  public Integer remove(Integer value){
-    return 0;
+  public boolean remove(Integer value){
+    boolean result = false;
+    if(contains(value)) {
+      remove(indexOf(value));
+      result = true;
+    }
+    return result;
   }
 }
