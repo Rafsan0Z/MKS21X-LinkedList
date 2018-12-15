@@ -94,20 +94,25 @@ public class MyLinkedList{
   }
 
   public void add(int index, Integer value){
-    if(index <= 0 || index > size){
+    if(index < 0 || index > size){
       throw new IndexOutOfBoundsException("Incorrect Index!");
     }
     size++;
-    Node temp = start;
-    for(int i = 0; i < index; i++){
-      temp = temp.next();
+    if(index == size - 1){
+      add(value);
     }
-    Node addend = new Node(null,null,value);
-    Node previous = temp.prev();
-    previous.setNext(addend);
-    temp.setPrev(addend);
-    addend.setNext(temp);
-    addend.setPrev(previous);
+    else {
+      Node temp = start;
+      for(int i = 0; i < index; i++){
+        temp = temp.next();
+      }
+      Node addend = new Node(null,null,value);
+      Node previous = temp.prev();
+      previous.setNext(addend);
+      temp.setPrev(addend);
+      addend.setNext(temp);
+      addend.setPrev(previous);
+    }
   }
 
   public Integer remove(int index){
@@ -115,7 +120,7 @@ public class MyLinkedList{
       throw new IndexOutOfBoundsException("Incorrect Index!");
     }
     Node temp = start; // create temporary Node
-    Integer result = 0; // set result to 0    
+    Integer result = 0; // set result to 0
     if(index == 0){
       result = start.getData();
       start = start.next();
