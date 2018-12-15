@@ -88,6 +88,7 @@ public class MyLinkedList{
       if(temp.getData() == value){
         return i;
       }
+      i++;
     }
     return -1;
   }
