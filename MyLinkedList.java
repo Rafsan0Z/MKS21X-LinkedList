@@ -118,12 +118,12 @@ public class MyLinkedList{
       Node previous = temp.prev();
       Node following = temp.next();
       previous.setNext(following);  // if temporary Node and end Node are differet, make create the previous and following Node and join them
-      following.setPrev(previos);
+      following.setPrev(previous);
       result = temp.getData();
     }
     else{
       Node previous = temp.prev();
-      previos.setNext(null);
+      previous.setNext(null);
       end = previous;
       result = temp.getData();
     }
