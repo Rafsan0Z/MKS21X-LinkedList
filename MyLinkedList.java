@@ -173,6 +173,12 @@ public class MyLinkedList{
   }
 
   public String toStringReverse(){
-
+    String result = "[";
+    Node temp = end;
+    while(temp != null){
+      if(temp.prev() != null) {result += temp.toString() + ",";}
+      temp = temp.prev();
+    }
+    return result + "]";
   }
 }
