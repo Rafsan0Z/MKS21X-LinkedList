@@ -30,7 +30,7 @@ public class MyLinkedList{
     String result = "[";
     Node temp = start;
     while(temp != null){
-      result += temp.toString() + ",";
+      if(temp.next() != null) {result += temp.toString() + ",";}
       temp = temp.next();
     }
     return result + "]";
@@ -170,5 +170,9 @@ public class MyLinkedList{
     extension.size() = 0;
     extension.end = null;
     extension.start = null;
+  }
+
+  public String toStringReverse(){
+
   }
 }
