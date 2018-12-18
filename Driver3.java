@@ -9,6 +9,8 @@ public class Driver3 {
         System.out.println("######################");
         MyLinkedList list = new MyLinkedList();
         System.out.println(list);
+        System.out.println("This is the reverse: ")
+        System.out.println(toStringReverse(list));
         System.out.println("This should print: \"[]\"\n");
 
         //Step Two: Let's add some values
