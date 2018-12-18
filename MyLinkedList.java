@@ -156,4 +156,19 @@ public class MyLinkedList{
     }
     return result; // returns the result
   }
+
+  public void extend(MyLinkedList extension){
+    int len1 = size();
+    int len2 = extension.size();
+    if(len2 == 0) {extension.end = end;}
+    if(len1 == 0) {start = extension.start;}
+    else{
+      end.setNext(extension.start);
+      extension.start.setPrev(end);
+    }
+    size += len2;
+    extension.size() = 0;
+    extension.end = null;
+    extension.start = null;
+  }
 }
